@@ -10,6 +10,7 @@ async function main() {
     await sharp(path)
       .webp({ quality: 100 })
       .toFile(path.replace(".HIF", ".webp"));
+    fs.unlinkSync(path);
   }
 }
 
